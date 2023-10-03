@@ -12,7 +12,7 @@ export default function Details() {
     function generatePDF() {
         const report = new jsPDF('portrait', 'pt', 'a4')
         report.html(document.querySelector('.container')).then(() => {
-            report.save(`Invoice: Travis Thompson - ${invoice.job}`)
+            report.save(`Invoice - Travis Thompson - ${invoice.job}`)
         })
     }
 
