@@ -18,9 +18,6 @@ export default function Details() {
 
 
     async function handleFetch() {
-        const options = {
-            method: "GET"
-        }
 
         try {
             console.log('url', URL)
