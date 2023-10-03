@@ -28,13 +28,14 @@ function App() {
 
   useEffect(() => {
     handleFetch()
+    console.log('state data', invoices)
   }, [])
 
 
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home invoices={invoices} />} />
         <Route path='/:id' element={<Details />} />
         <Route path='/new' element={<NewInvoice />} />
       </Routes>
