@@ -12,7 +12,7 @@ export default function Home(props){
                     Past Invoices
                 </h2>
                 {invoices && invoices.map((oneInvoice, index) => (
-                    <p>{index}</p>
+                    <p>{oneInvoice.client}</p>
                 ))}
             </div>
         </div>
