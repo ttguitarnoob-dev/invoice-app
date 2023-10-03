@@ -1,4 +1,4 @@
-export default function Home(props){
+export default function Home(props) {
 
     const invoices = props.invoices
     console.log('prps', invoices)
@@ -11,9 +11,26 @@ export default function Home(props){
                 <h2>
                     Past Invoices
                 </h2>
-                {invoices && invoices.map((oneInvoice, index) => (
-                    <p>{oneInvoice.client}</p>
-                ))}
+                <table>
+                    <tr>
+                        <th>Client</th>
+                        <th>Job</th>
+                        <th>Paid</th>
+                    </tr>
+
+                    {invoices && invoices.map((oneInvoice, index) => (
+                        
+                        <tr>
+                            <td><a href={`/${oneInvoice._id}`} >{oneInvoice.client}</a></td>
+                            <td>{oneInvoice.job}</td>
+                            <td>{oneInvoice.paid.toString()}</td>
+                        </tr>
+                        
+                    ))}
+
+                    
+                </table>
+
             </div>
         </div>
     )
