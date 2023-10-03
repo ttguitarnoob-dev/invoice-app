@@ -8,18 +8,19 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const URL = "https://api.ttguitarnoob.cloud/invoices"
+  const backend = "https://api.ttguitarnoob.cloud/invoices"
   const [invoices, setInvoices] = useState()
 
-  async function handleFetch() {
+  async function handleFetch(URL, method) {
     const options = {
-      method: "GET"
+      method: method
     }
 
     try {
       const response = await fetch(URL, options)
       const data = await response.json()
       setInvoices(data)
+      return data
     } catch(err){
       console.log("Something died when fetching invoices", err)
     }
@@ -27,8 +28,7 @@ function App() {
   }
 
   useEffect(() => {
-    handleFetch()
-    console.log('state data', invoices)
+    handleFetch(backend, "GET")
   }, [])
 
 
@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Home invoices={invoices} />} />
-        <Route path='/:id' element={<Details />} />
+        <Route path='/:id' element={<Details  />} />
         <Route path='/new' element={<NewInvoice />} />
       </Routes>
 

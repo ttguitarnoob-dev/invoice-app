@@ -13,6 +13,7 @@ export default function NewInvoice() {
 
     function handleSubmit(e) {
         e.preventDefault()
+        initialInput.total = initialInput.rate * initialInput.hours
         createItem(initialInput)
     }
 
