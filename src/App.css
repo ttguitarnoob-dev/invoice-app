@@ -22,7 +22,7 @@ th {
 }
 
 td {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 tr:nth-child(even) {
@@ -37,9 +37,9 @@ tr:nth-child(even) {
   flex-direction: column;
   margin-top: 2rem;
   border: 1px solid black;
-  padding: 2rem;
+  padding: 1rem;
   width: 92vw;
-  /* max-width: 1200px; */
+  max-width: 550px;
   border-radius: 20px;
   background-color: rgb(232, 237, 241);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
