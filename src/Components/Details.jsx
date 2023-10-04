@@ -50,7 +50,12 @@ export default function Details() {
 
                 <h1>Invoice for {invoice.client}</h1>
                 <div className="table">
-                    <table>
+                    <p><span>Job: </span>{invoice.job}</p>
+                    <p><span>Notes: </span>{invoice.tasks}</p>
+                    <p><span>Rate: </span>${invoice.rate}/hr</p>
+                    <p><span>Hours: </span>{invoice.hours}</p>
+                    <p><span>Total: </span>${invoice.total}</p>
+                    {/* <table>
                         <tr>
                             <th>Job</th>
                             <th>Notes</th>
@@ -65,7 +70,7 @@ export default function Details() {
                             <td>{invoice.hours}</td>
                             <td>${invoice.total}</td>
                         </tr>
-                    </table>
+                    </table> */}
                 </div>
             </div>
             <button onClick={generatePDF}>Save As PDF</button>
