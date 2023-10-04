@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router';
 import Details from './Components/Details';
 import NewInvoice from './Components/New';
 import { useEffect, useState } from 'react';
+import UserHome from './Components/UserHome';
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home invoices={invoices} />} />
+        <Route path='/travvyvoices' element={<Home invoices={invoices} />} />
+        <Route path='/' element={<UserHome />} />
         <Route path='/:id' element={<Details  />} />
         <Route path='/new' element={<NewInvoice />} />
       </Routes>
